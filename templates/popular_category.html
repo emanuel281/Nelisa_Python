@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Nelisa Spaza</title>
+		<link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/static/main_page.css">
+		<script type="text/javascript" src="/static/jquery.min.js"></script>
+		<script type="text/javascript" src="/static/bootstrap.min.js"></script>	</head>
+	<body>
+		<div class="nav navbar navbar-default navbar-fixed-top">
+			<a href="/"><h1>Nelisa Spaza Shop</h1></a>
+		</div>
+		
+		
+		<div class="main-container container">
+		
+			
+		    <nav id="myNavbar" class="navbar navbar-default" role="navigation">
+		        
+		        <div class="container">
+		            <div class="navbar-header">
+		                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#shop-menu-dropdown">
+		                    <span class="sr-only">Toggle Menu</span>
+		                    <span class="icon-bar"></span>
+		                    <span class="icon-bar"></span>
+		                    <span class="icon-bar"></span>
+		                </button>
+		                <a class="navbar-brand" href="/">Home</a>
+		            </div>
+		            
+		            <div class="collapse navbar-collapse" id="shop-menu-dropdown">
+		                <ul class="nav navbar-nav">
+		                    <li class="dropdown">
+		                        <a href="" data-toggle="dropdown" class="dropdown-toggle">Sales<b class="caret"></b></a>
+
+									
+		                            	<li><a href="/popular_product">Popular Product</a></li>
+		                            	<li><a href="/popular_category">Popular Category</a></li>
+		                            	<li><a href="/sales">Sales</a></li>
+		                        </ul>
+		                    </li>
+		                    
+		                <ul class="nav navbar-nav navbar-right">
+		                    <li class="dropdown">
+		                        <a href="" data-toggle="dropdown" class="dropdown-toggle">Tables &amp Settings<b class="caret"></b></a>
+		                        <ul class="dropdown-menu">
+		                            <li><a href="sales_history">Sales History</a></li>
+		                            
+			                            <li><a href="purchase_history">Purchase History</a></li>
+			                            <li><a href="product_sold">Products Sold</a></li>
+			                            <li><a href="categories">Categories</a></li>
+			                            <li><a href="all_suppliers">Past Suppliers</a></li>
+			                            <li class="divider"></li>
+			                            <li><a href="admin_panel"><strong>Admin Settings</strong></a></li>
+			                        
+		                            <li class="divider"></li>
+		                            <li><a href="logout" class="btn-danger"><strong>Log Out</strong></a></li>
+		                        </ul>
+		                    </li>
+		                </ul>
+		            
+		        </div>
+		    </nav>
+
+			
+			<div class="container col-xs-12">
+				<div class="cols-xs-10 shifter">
+					
+					<h2>Popularity of Categories</h2>
+					<table class="table table-striped table-bordered">
+						<thead>
+							<tr>
+								<th>Category</th> <th>Total number of items sold</th>
+							</tr>
+						</thead>
+					
+						<tbody>
+							{% if result %}
+								{% for key in result %}
+								   <tr>
+								        <td> {{ key[0] }} </td>
+								        <td> {{ key[1] }} </td>
+								   </tr>
+								{% endfor %}
+							{% else %}
+								{% for key in result2 %}
+								   <tr>
+								        <td> {{ key }} </td>
+								        <td> {{ key }} </td>
+								   </tr>
+								{% endfor %}
+							{% endif %}
+						</tbody></tbody>
+					</table>
+				</div>
+			</div>
+			
+		</div>
+		
+
+
+		<footer class="navbar-fixed-bottom">
+			<div class="footer-right">
+				<div class="col-xs-1 developers"><a href="/#">developers</a></div>
+				<div class="col-xs-1 copyright"><a href="/#">copyright</a></div>
+				<div class="col-xs-1 disclaimer"><a href="/#">disclaimer</a></div>
+			</div>
+
+			<div class="footer-left">
+				<div class="col-xs-2">Powered by <a href="http://www.projectcodex.co">CodeX</a></div>
+			</div>
+		</footer>
+
+	</body>
+</html>
